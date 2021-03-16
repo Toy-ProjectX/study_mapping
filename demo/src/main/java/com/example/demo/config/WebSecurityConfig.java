@@ -28,11 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
 //                .csrf().disable()
                 .authorizeRequests()
-<<<<<<< HEAD
                 .antMatchers("/login", "/signup", "/user", "/", "/kakao/**").permitAll() // 누구나 접근 가능
-=======
                 .antMatchers("/login", "/signup", "/user", "/").permitAll() // 누구나 접근 가능
->>>>>>> da1f30faf28e074c9b94fcc98da59dc65249c619
                 .antMatchers("/detail", "/update", "/write", "/post").hasRole("USER") // USER 권한 필요
                 .antMatchers("/admin").hasRole("ADMIN") // ADMIN 권한 필요
                 .anyRequest().authenticated() // 나머지 요청은 모두 권한 종류 상관없이 권한이 있어야 함
