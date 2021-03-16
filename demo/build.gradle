@@ -24,7 +24,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+<<<<<<< HEAD
 	implementation 'org.apache.httpcomponents:httpclient:4.5'
+=======
+>>>>>>> da1f30faf28e074c9b94fcc98da59dc65249c619
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
