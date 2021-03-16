@@ -26,15 +26,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {  //http 인증 설정
         http
+//                .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login", "/signup", "/user", "/", "/post").permitAll() // 누구나 접근 가능
+                .antMatchers("/login", "/signup", "/user", "/", "/kakao/**").permitAll() // 누구나 접근 가능
                 .antMatchers("/detail", "/update", "/write", "/post").hasRole("USER") // USER 권한 필요
                 .antMatchers("/admin").hasRole("ADMIN") // ADMIN 권한 필요
                 .anyRequest().authenticated() // 나머지 요청은 모두 권한 종류 상관없이 권한이 있어야 함
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/") // 로그인 페이지 설정, 로그인 후 "/"로 Redirect
                 .and()
-                .logout().logoutSuccessUrl("/login").invalidateHttpSession(true); // 로그아웃시 "/login" 으로 Redirect 하고 세션 날림
+                .logout().logoutSuccessUrl("/login").invalidateHttpSession(true);// 로그아웃시 "/login" 으로 Redirect 하고 세션 날림
     }
 
     @Override
